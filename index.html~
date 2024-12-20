@@ -1,12 +1,12 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>Générateur de père noël secret privé</title>
-        <meta property="og:title" content="Private Secret Santa Generator">
+        <meta property="og:title" content="Générateur de père noël secret privé">
         <meta property="og:image" content="https://privatesecretsanta.com/image.png">
-        <meta name="description" content="Private Secret Santa generator with no email, no cookies, and no data sent to the server, with exclusions to prevent specific pairings.">
+        <meta name="description" content="Générateur de père noël secret privé sans courriel, sans cookie, et aucune données envoyées au serveur, avec gestion des exclusions pour éviter certains appairages.">
         <link rel="icon" href="favicon.ico">
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="manifest" href="manifest.webmanifest">
@@ -423,7 +423,7 @@
 
                 const encodedData = encodeData(rawData);
 
-                addNewLink("Group Link", encodedData);
+                addNewLink("Lien du groupe", encodedData);
 
                 allLinksArticle.style.display = "flex";
             };
@@ -454,14 +454,14 @@
 
                 let copyButton = document.createElement("button");
                 copyButton.type = "button";
-                copyButton.textContent = "Copy";
+                copyButton.textContent = "Copier";
                 copyButton.addEventListener("click", () => navigator.clipboard.writeText(copyLink));
                 shareButtonsDiv.appendChild(copyButton);
 
                 if (navigator.share) {
                     let shareButton = document.createElement("button");
                     shareButton.type = "button";
-                    shareButton.textContent = "Share";
+                    shareButton.textContent = "Partager";
                     shareButton.addEventListener("click", () => navigator.share({title: "Père Noël secret", url: copyLink}));
                     shareButtonsDiv.appendChild(shareButton);
                 }
@@ -515,7 +515,7 @@
                     pairedArticle.appendChild(greetingTextDiv);
 
                     let pairedDiv = document.createElement("div");
-                    pairedDiv.textContent = "You have been paired with ";
+                    pairedDiv.textContent = "Tu as été lié à";
                     pairedArticle.appendChild(pairedDiv);
 
                     let pairedDetails = document.createElement("details");
@@ -523,7 +523,7 @@
                     pairedDiv.appendChild(pairedDetails);
 
                     let pairedSummary = document.createElement("summary");
-                    pairedSummary.textContent = "Click to reveal";
+                    pairedSummary.textContent = "Clique pour voir";
                     pairedDetails.appendChild(pairedSummary);
 
                     let pairedNameDiv = document.createElement("div");
@@ -571,14 +571,14 @@
                                 participantButton.type = "button";
                                 participantButton.textContent = name;
                                 participantButton.addEventListener("click", () => {
-                                    if (confirm(`Are you sure you want to see who is paired with ${name}?`)) {
+                                    if (confirm(`Es-tu sûr de vouloir voir qui est lié à ${name}?`)) {
                                         participantsArticle.style.display = "none";
 
                                         let pairedArticle = createPairedArticle(`Hello ${name},`, pairs.names[pairs.indexes[i]]);
 
                                         let goBackButton = document.createElement("button");
                                         goBackButton.type = "button";
-                                        goBackButton.textContent = "Go back";
+                                        goBackButton.textContent = "Revenir";
                                         goBackButton.style.width = "max-content";
                                         goBackButton.addEventListener("click", () => {
                                             participantsArticle.style.display = "";
