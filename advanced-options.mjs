@@ -34,12 +34,12 @@ hideAdvancedOptionsSpan.style.display = "inline";
 let advancedOptionsFieldset = document.createElement("fieldset");
 
 let advancedOptionsFieldsetLegend = document.createElement("legend");
-advancedOptionsFieldsetLegend.textContent = "Advanced options";
+advancedOptionsFieldsetLegend.textContent = "Options avancées";
 advancedOptionsFieldset.appendChild(advancedOptionsFieldsetLegend);
 
 let configureExclusionsOptionButton = document.createElement("button");
 configureExclusionsOptionButton.type = "submit";
-configureExclusionsOptionButton.textContent = "Configure exclusions";
+configureExclusionsOptionButton.textContent = "Configurer les exclusions";
 configureExclusionsOptionButton.addEventListener("click", () => {
     pairs.names = window.getParticipantNames();
     // If names < 3 we return thus allowing the browser to require from the user to enter data in the required input fields.
@@ -59,7 +59,7 @@ configureExclusionsOptionButton.addEventListener("click", () => {
     configureExclusionsFieldset.style.gap = "1.5rem";
 
     let configureExclusionsFieldsetLegend = document.createElement("legend");
-    configureExclusionsFieldsetLegend.textContent = "Select anyone that cannot be the secret santa of a participant";
+    configureExclusionsFieldsetLegend.textContent = "Sélectionner ceux qui ne doivent pas être le père noël secret pour un participant";
     configureExclusionsFieldset.appendChild(configureExclusionsFieldsetLegend);
 
     advancedOptions.exclusionCheckboxes = Array.from(Array(pairs.size), () => []);
@@ -126,7 +126,7 @@ window.generateIndexes = () => {
 
     let errorDiv = document.createElement("div");
     errorDiv.id = "exclusions-error";
-    errorDiv.textContent = "You have configured exclusions that prevent certain participants from being paired with anyone";
+    errorDiv.textContent = "Vous avez créer des exclusions qui empêchent certains participants d'êtres sélectionnés";
     form.appendChild(errorDiv);
 
     document.getElementById("all-links-article").style.display = "";
