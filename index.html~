@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <title>Générateur de père noël secret privé</title>
+        <title>Private Secret Santa Generator</title>
         <meta property="og:title" content="Private Secret Santa Generator">
         <meta property="og:image" content="https://privatesecretsanta.com/image.png">
         <meta name="description" content="Private Secret Santa generator with no email, no cookies, and no data sent to the server, with exclusions to prevent specific pairings.">
@@ -258,34 +258,34 @@
     </head>
     <body>
         <header>
-            <h1>Générateur de Père Noël secret</h1>
+            <h1>Secret Santa Generator</h1>
         </header>
         <main>
             <form>
                 <fieldset>
-                    <legend>Entrer les noms des participants</legend>
+                    <legend>Enter participant names</legend>
                     <label>
-                        <input type="text" name="participantName[]" placeholder="Nom du participant" required>
-                        <button type="button" class="remove" style="display: none">Effacer</button>
+                        <input type="text" name="participantName[]" placeholder="Participant Name" required>
+                        <button type="button" class="remove" style="display: none">Remove</button>
                     </label>
                     <label>
-                        <input type="text" name="participantName[]" placeholder="Nom du participant" required>
-                        <button type="button" class="remove" style="display: none">Effacer</button>
+                        <input type="text" name="participantName[]" placeholder="Participant Name" required>
+                        <button type="button" class="remove" style="display: none">Remove</button>
                     </label>
                     <label>
-                        <input type="text" name="participantName[]" placeholder="Nom du participant" required>
-                        <button type="button" class="remove" style="display: none">Effacer</button>
+                        <input type="text" name="participantName[]" placeholder="Participant Name" required>
+                        <button type="button" class="remove" style="display: none">Remove</button>
                     </label>
                 </fieldset>
                 <div id="form-buttons">
-                    <button type="button">Ajouter un participant</button>
-                    <button type="button"><span>Afficher</span><span style="display: none">Cacher</span> options avancées</button>
-                    <button type="submit">Générer la liste aléatoire</button>
+                    <button type="button">Add another participant</button>
+                    <button type="button"><span>Show</span><span style="display: none">Hide</span> advanced options</button>
+                    <button type="submit">Generate random pairings</button>
                 </div>
             </form>
             <article id="all-links-article">
                 <div id="all-links-div"></div>
-                <button id="create-individual-links-button" type="button">Créer les liens individuels</button>
+                <button id="create-individual-links-button" type="button">Create individual links</button>
             </article>
         </main>
         <footer>
@@ -462,7 +462,7 @@
                     let shareButton = document.createElement("button");
                     shareButton.type = "button";
                     shareButton.textContent = "Share";
-                    shareButton.addEventListener("click", () => navigator.share({title: "Père Noël secret", url: copyLink}));
+                    shareButton.addEventListener("click", () => navigator.share({title: "Secret Santa", url: copyLink}));
                     shareButtonsDiv.appendChild(shareButton);
                 }
 
@@ -563,7 +563,7 @@
                             participantsArticle.id = "participants-article";
 
                             let participantsTextDiv = document.createElement("div");
-                            participantsTextDiv.textContent = "Clique sur ton prénom";
+                            participantsTextDiv.textContent = "Please select your name";
                             participantsArticle.appendChild(participantsTextDiv);
 
                             for (const [i, name] of pairs.names.entries()) {
