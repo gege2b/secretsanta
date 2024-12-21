@@ -541,7 +541,7 @@
                         const nameBytes = rawData.subarray(rawData[0] + 1, rawData[0] + 1 + nameSize);
                         const name = new TextDecoder("utf-8", {fatal: true}).decode(nameBytes);
 
-                        createPairedArticle("Congratulations!", name);
+                        createPairedArticle("Félicitations!", name);
                         break;
                     }
                     default: {
